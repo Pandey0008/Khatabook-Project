@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-zinc-900 text-white">
+    <main class="w-full h-screen flex flex-col">
+        
+        <nav class="flex px-5 sm:px-10 justify-between py-5 bg-zinc-800 shadow-md">
+            <h3 class="text-2xl tracking-tight text-white">Khaatabook</h3>
+            <div class="navlinks flex gap-5">
+                <a class="tracking-tight text-white hover:text-blue-400 transition-colors" href="/">Home</a>
+                <a class="tracking-tight text-white hover:text-blue-400 transition-colors" href="/create">Create New Hisaab</a>
+            </div>
+        </nav>
+
+        \
+        <div class="px-5 sm:px-10 py-10 flex-grow">
+            <h3 class="text-2xl sm:text-3xl font-medium mb-5 tracking-tight text-white">
+                You're editing hisaab of <span class="text-blue-500"><%= filename.split('.tx')[0] %></span>
+            </h3>
+
+            <form action="/update/<%= filename %>" method="post" class="space-y-5">
+                <textarea class="block w-full sm:w-1/2 px-3 py-2 resize-none bg-zinc-700 rounded-md min-h-96 outline-none text-white"
+                    placeholder="Write your hisaab." name="content"><%= filedata %></textarea>
+
+                <input type="submit" class="block w-full sm:w-1/2 px-5 py-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"
+                    value="Update Hisaab">
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>

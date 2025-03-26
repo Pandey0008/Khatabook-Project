@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-zinc-900 text-white">
+    <main class="w-full h-screen flex flex-col">
+       
+        <nav class="flex px-5 sm:px-10 justify-between py-5 bg-zinc-800 shadow-md">
+            <h3 class="text-2xl tracking-tight text-white">Khaatabook</h3>
+            <div class="navlinks flex gap-5">
+                <a class="tracking-tight text-white hover:text-blue-400 transition-colors" href="/">Home</a>
+                <a class="tracking-tight text-white hover:text-blue-400 transition-colors" href="/create">Create New Hisaab</a>
+            </div>
+        </nav>
+
+        
+        <div class="px-5 sm:px-10 py-10 flex-grow">
+            <h3 class="capitalize text-2xl sm:text-3xl font-medium mb-5 tracking-tight text-white">
+                Create New Hisaab
+            </h3>
+
+            <form action="/createhisaab" method="post" class="space-y-5">
+                <input name="title" class="text-md px-3 py-2 w-full sm:w-1/2 mb-5 rounded-md bg-zinc-700 text-white focus:ring-2 focus:ring-blue-500 outline-none"
+                    type="text" placeholder="Shopping ka hisaab, ghar ka kharch..." required>
+                
+                <textarea name="content" class="block w-full sm:w-1/2 px-3 py-2 resize-none bg-zinc-700 text-white rounded-md min-h-96 focus:ring-2 focus:ring-blue-500 outline-none"
+                    placeholder="Write your hisaab." required></textarea>
+                
+                <input type="submit" class="block mt-5 px-5 py-3 w-full sm:w-1/2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"
+                    value="Create Hisaab">
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>
